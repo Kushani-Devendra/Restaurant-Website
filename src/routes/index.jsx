@@ -7,15 +7,24 @@ export default function Index() {
         width: "100%",
         height: "100vh",
         display: "flex",
+        flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
       }}
     >
       <Typography variant="h4">
-        This is a the Home Page.
+        This is the Home Page.
         {/* <br />
       Check out{" "}
       <a href="https://reactrouter.com">the docs at reactrouter.com</a>. */}
+      </Typography>
+      <Typography
+        variant="subtitle1"
+        sx={{
+          mt: 1,
+        }}
+      >
+        Nothing to see here...
       </Typography>
     </Box>
   );
