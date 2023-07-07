@@ -1,7 +1,7 @@
 import { Box, Typography, useTheme } from "@mui/material";
 import React from "react";
 
-export default function PickupCard() {
+export default function CashCard() {
   const theme = useTheme();
 
   return (
@@ -13,7 +13,7 @@ export default function PickupCard() {
         borderRadius: 3,
       }}
     >
-      <Typography variant="h6">Pickup you order at our store.</Typography>
+      <Typography variant="h6">Pay cash on delivery.</Typography>
     </Box>
   );
 }

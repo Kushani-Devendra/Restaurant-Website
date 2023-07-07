@@ -1,10 +1,28 @@
 import { Box, Container, Grid } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { burgerList } from "../data/burgerData";
 import CartItem from "../common/CartItem";
-import DeliveryMethod from "../common/DeliveryMethod";
+import DeliverySection from "../common/DeliverySection";
+import PaymentSection from "../common/PaymentSection";
 
 export default function ShoppingCart() {
+  const [showDeliverySection, setShowDeliverySection] = useState(true);
+  const [showPaymentSection, setShowPaymentSection] = useState(false);
+
+  function handleShowDeliverySection() {
+    if (showPaymentSection) {
+      setShowPaymentSection(false);
+    }
+    setShowDeliverySection(true);
+  }
+
+  function handleShowPaymentSection() {
+    if (showDeliverySection) {
+      setShowDeliverySection(false);
+    }
+    setShowPaymentSection(true);
+  }
+
   return (
     <Box
       sx={{
@@ -33,8 +51,12 @@ export default function ShoppingCart() {
         )}
       </Grid>
 
+      {showDeliverySection ? (
+        <DeliverySection handleShowPaymentSection={handleShowPaymentSection} />
+      ) : (
+        <PaymentSection showPaymentSection={showPaymentSection} />
+      )}
       {/*  delivery option */}
-      <DeliveryMethod />
     </Box>
   );
 }
