@@ -42,7 +42,7 @@ import burger7 from "../assets/images/burger_7.jpg";
 import burger8 from "../assets/images/burger_8.jpg";
 import burger9 from "../assets/images/burger_9.jpg";
 import burger10 from "../assets/images/burger_10.jpg";
-import ProductCard from "../components/ProductCard";
+import ProductCard from "../common/ProductCard";
 import { burgerList } from "../data/burgerData";
 
 function LinkTab(props) {

@@ -22,8 +22,9 @@ import {
   useTheme,
 } from "@mui/material";
 import { Close, ShoppingCart } from "@mui/icons-material";
-import { NumberFormatBase } from "react-number-format";
 import burger2 from "../assets/images/burger_2.jpg";
+import SelectAddons from "./SelectAddons";
+import SelectQuantity from "./SelectQuantity";
 
 // dialog box
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
@@ -66,66 +67,8 @@ BootstrapDialogTitle.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
-// multiple select
-const ITEM_HEIGHT = 48;
-const ITEM_PADDING_TOP = 8;
-const MenuProps = {
-  PaperProps: {
-    style: {
-      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 250,
-    },
-  },
-};
-
-const addons = ["Cheese", "Mushroom", "Sausages", "Chicken"];
-
-function getStyles(addons, addonName, theme) {
-  return {
-    fontWeight:
-      addonName.indexOf(addons) === -1
-        ? theme.typography.fontWeightRegular
-        : theme.typography.fontWeightMedium,
-  };
-}
-
-// quantity
-function NumericFormatCustom(props) {
-  const { inputRef, onChange, ...other } = props;
-
-  return (
-    <NumberFormatBase
-      {...other}
-      getInputRef={inputRef}
-      allowNegative={false}
-      onValueChange={(values) => {
-        onChange({
-          target: {
-            name: props.name,
-            value: values.value,
-          },
-        });
-      }}
-      isNumericString
-    />
-  );
-}
-
 export default function ProductCardDialog({ open, handleCloseDialog, props }) {
   const theme = useTheme();
-
-  //   addons
-  const [addonName, setAddonName] = React.useState([]);
-
-  const handleChange = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setAddonName(
-      // On autofill we get a stringified value.
-      typeof value === "string" ? value.split(",") : value
-    );
-  };
 
   return (
     <BootstrapDialog
@@ -231,45 +174,7 @@ export default function ProductCardDialog({ open, handleCloseDialog, props }) {
             >
               Addons
             </Typography>
-            <FormControl sx={{ m: 1, width: 250 }}>
-              <Select
-                id="demo-multiple-name"
-                multiple
-                displayEmpty
-                value={addonName}
-                onChange={handleChange}
-                input={<OutlinedInput />}
-                renderValue={(selected) => {
-                  if (selected.length === 0) {
-                    return <em>Select addons</em>;
-                  }
-
-                  return selected.join(", ");
-                }}
-                MenuProps={MenuProps}
-                inputProps={{ "aria-label": "Without label" }}
-                size="small"
-                sx={{ ml: -1, fontSize: { xs: "14px", md: "16px" } }}
-              >
-                <MenuItem
-                  disabled
-                  value=""
-                  sx={{ fontSize: { xs: "14px", md: "16px" } }}
-                >
-                  <em>Select addons</em>
-                </MenuItem>
-                {addons.map((addon) => (
-                  <MenuItem
-                    key={addon}
-                    value={addon}
-                    style={getStyles(addons, addonName, theme)}
-                    sx={{ fontSize: { xs: "14px", md: "16px" } }}
-                  >
-                    {addon}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
+            <SelectAddons />
 
             {/* quantity */}
             <Typography
@@ -280,18 +185,7 @@ export default function ProductCardDialog({ open, handleCloseDialog, props }) {
             >
               Quantity
             </Typography>
-            <TextField
-              //   label="react-number-format"
-              //   value={values.numberformat}
-              //   onChange={handleChange}
-              name="numberformat"
-              id="formatted-numberformat-input"
-              InputProps={{
-                inputComponent: NumericFormatCustom,
-              }}
-              size="small"
-              sx={{ width: 256, mt: 1 }}
-            />
+            <SelectQuantity />
           </Grid>
 
           {/* price */}
