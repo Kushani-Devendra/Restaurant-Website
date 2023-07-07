@@ -1,7 +1,7 @@
 import { Box, ThemeProvider, createTheme } from "@mui/material";
 import React from "react";
-import NavBar from "../components/NavBar";
 import { Outlet } from "react-router-dom";
+import NavBar from "../common/NavBar";
 
 const theme = createTheme({
   palette: {
