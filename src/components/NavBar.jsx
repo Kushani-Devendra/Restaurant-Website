@@ -70,23 +70,12 @@ export default function NavBar() {
               {/* noclick go to page + close menu */}
               {/* view menu */}
               <MenuItem>
-                <NavLink
-                  to={"/view-menu"}
-                  onClick={handleCloseNavMenu}
-                  style={({ isActive, isPending }) => {
-                    return {
-                      // margin: "0px 1.5em",
-                      textDecoration: "none",
-                      fontWeight: isActive ? 600 : 400,
-                      color: isActive ? theme.palette.primary.main : "",
-                    };
-                  }}
-                >
+                <NavLink to={"/view-menu"} onClick={handleCloseNavMenu}>
                   <Link
                     to={"/view-menu"}
                     style={{
                       textDecoration: "none",
-                      // color: "#fff",
+                      color: theme.palette.secondary.main,
                     }}
                   >
                     View Menu
@@ -96,23 +85,12 @@ export default function NavBar() {
 
               {/* order at table */}
               <MenuItem>
-                <NavLink
-                  to={"/order-at-table"}
-                  onClick={handleCloseNavMenu}
-                  style={({ isActive, isPending }) => {
-                    return {
-                      // margin: "0px 1.5em",
-                      textDecoration: "none",
-                      fontWeight: isActive ? 600 : 400,
-                      color: isActive ? theme.palette.primary.main : "",
-                    };
-                  }}
-                >
+                <NavLink to={"/order-at-table"} onClick={handleCloseNavMenu}>
                   <Link
                     to={"/order-at-table"}
                     style={{
                       textDecoration: "none",
-                      // color: "#fff",
+                      color: theme.palette.secondary.main,
                     }}
                   >
                     Order At Table
@@ -240,12 +218,11 @@ export default function NavBar() {
           {/* cart */}
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Shopping Cart">
-              <IconButton
-                // onClick={}
-                sx={{ color: "inherit" }}
-              >
-                <ShoppingCart />
-              </IconButton>
+              <Link to={"/shopping-cart"}>
+                <IconButton sx={{ color: "#fff" }}>
+                  <ShoppingCart />
+                </IconButton>
+              </Link>
             </Tooltip>
           </Box>
         </Toolbar>

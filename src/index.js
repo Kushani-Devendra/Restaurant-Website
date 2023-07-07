@@ -16,6 +16,7 @@ import Index from "./routes";
 import Layout from "./routes/layout";
 import ViewMenu from "./pages/ViewMenu";
 import OrderOnline from "./pages/OrderOnline";
+import ShoppingCart from "./pages/ShoppingCart";
 
 const router = createBrowserRouter([
   {
@@ -31,12 +32,10 @@ const router = createBrowserRouter([
         element: <OrderOnline />,
         // loader: contactLoader,
       },
-      // {
-      //   path: "view-menu",
-      //   element: <ViewMenu />,
-      // errorElement: <div>Oops! Page not found.</div>,
-      // },
-      // {
+      {
+        path: "shopping-cart",
+        element: <ShoppingCart />,
+      },
     ],
   },
   // {

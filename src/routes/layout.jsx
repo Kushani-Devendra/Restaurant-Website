@@ -20,8 +20,6 @@ export default function Layout() {
     <ThemeProvider theme={theme}>
       <Box>
         <NavBar />
-      </Box>
-      <Box>
         <Outlet />
       </Box>
     </ThemeProvider>
