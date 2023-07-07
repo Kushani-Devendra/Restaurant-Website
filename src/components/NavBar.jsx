@@ -1,6 +1,7 @@
 import React from "react";
 import {
   AppBar,
+  Badge,
   Box,
   Button,
   Container,
@@ -220,7 +221,9 @@ export default function NavBar() {
             <Tooltip title="Shopping Cart">
               <Link to={"/shopping-cart"}>
                 <IconButton sx={{ color: "#fff" }}>
-                  <ShoppingCart />
+                  <Badge badgeContent={4} color="primary">
+                    <ShoppingCart />
+                  </Badge>
                 </IconButton>
               </Link>
             </Tooltip>
