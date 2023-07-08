@@ -34,7 +34,7 @@ export default function DeliverySection({ handleShowPaymentSection }) {
   }
 
   return (
-    <Box sx={{ mt: 8, textAlign: "center" }}>
+    <Box sx={{ mt: { xs: 3, md: 8 }, textAlign: "center" }}>
       <Typography variant="subtitle1">How to recieve your order?</Typography>
       <Box>
         {/* buttons */}
@@ -84,9 +84,9 @@ export default function DeliverySection({ handleShowPaymentSection }) {
         onClick={handleShowPaymentSection}
         sx={{
           mt: 3,
-          px: 3,
+          width: { xs: "100%", md: "200px" },
           textTransform: "none",
-          fontSize: "22px",
+          fontSize: { xs: "18px", md: "22px" },
           color: "#fff",
         }}
       >

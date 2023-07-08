@@ -1,5 +1,5 @@
-import { Box, Typography, useTheme } from "@mui/material";
 import React from "react";
+import { Box, Typography, useTheme } from "@mui/material";
 
 export default function PickupCard() {
   const theme = useTheme();
@@ -7,13 +7,15 @@ export default function PickupCard() {
   return (
     <Box
       sx={{
-        mt: 5,
+        mt: { xs: 3, md: 5 },
         p: 3,
         backgroundColor: theme.palette.grey[100],
         borderRadius: 3,
       }}
     >
-      <Typography variant="h6">Pickup you order at our store.</Typography>
+      <Typography variant="h6" sx={{ fontSize: { xs: "16px", md: "20px" } }}>
+        Pickup you order at our store
+      </Typography>
     </Box>
   );
 }

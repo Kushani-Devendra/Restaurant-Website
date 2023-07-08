@@ -1,20 +1,20 @@
-import { Box, Container, Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import React, { useState } from "react";
-import { burgerList } from "../data/burgerData";
-import CartItem from "../common/CartItem";
-import DeliverySection from "../common/DeliverySection";
-import PaymentSection from "../common/PaymentSection";
+import { burgerList } from "../../data/burgerData";
+import CartItem from "./CartItem";
+import DeliverySection from "./deliverySection/DeliverySection";
+import PaymentSection from "./paymentSection/PaymentSection";
 
 export default function ShoppingCart() {
   const [showDeliverySection, setShowDeliverySection] = useState(true);
   const [showPaymentSection, setShowPaymentSection] = useState(false);
 
-  function handleShowDeliverySection() {
-    if (showPaymentSection) {
-      setShowPaymentSection(false);
-    }
-    setShowDeliverySection(true);
-  }
+  // function handleShowDeliverySection() {
+  //   if (showPaymentSection) {
+  //     setShowPaymentSection(false);
+  //   }
+  //   setShowDeliverySection(true);
+  // }
 
   function handleShowPaymentSection() {
     if (showDeliverySection) {

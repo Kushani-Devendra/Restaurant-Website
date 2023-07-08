@@ -13,11 +13,11 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import burger1 from "../assets/images/burger_1.jpg";
+import burger1 from "../../assets/images/burger_1.jpg";
 
 import { Close } from "@mui/icons-material";
 import { NumberFormatBase } from "react-number-format";
-import { addonList } from "../data/addonList";
+import { addonList } from "../../data/addonList";
 import { useTheme } from "@emotion/react";
 
 // multiple select

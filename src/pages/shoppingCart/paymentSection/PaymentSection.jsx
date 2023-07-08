@@ -1,15 +1,5 @@
-import { LocalOffer } from "@mui/icons-material";
-import {
-  Box,
-  Button,
-  FormControlLabel,
-  FormGroup,
-  Stack,
-  Switch,
-  Typography,
-  useTheme,
-} from "@mui/material";
 import React, { useState } from "react";
+import { Box, Button, Typography, useTheme } from "@mui/material";
 import BankCard from "./BankCard";
 import CashCard from "./CashCard";
 
@@ -34,9 +24,20 @@ export default function PaymentSection({ showPaymentSection }) {
   }
 
   return (
-    <Box sx={{ mt: 8, textAlign: "center" }}>
+    <Box sx={{ mt: { xs: 3, md: 8 }, textAlign: "center" }}>
       {showPaymentSection && (
-        <Button variant="contained" type="button" sx={{ mb: 8, color: "#fff" }}>
+        <Button
+          variant="contained"
+          type="button"
+          sx={{
+            mb: { xs: 3, md: 8 },
+            // px: 3,s
+            width: { xs: "100%", md: "200px" },
+            textTransform: "none",
+            fontSize: { xs: "18px", md: "22px" },
+            color: "#fff",
+          }}
+        >
           Order Again
         </Button>
       )}
@@ -84,22 +85,6 @@ export default function PaymentSection({ showPaymentSection }) {
         {/* Card card */}
         {showBankCard ? <BankCard /> : <CashCard />}
       </Box>
-
-      {/* order button
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={handleShowPaymentSection}
-        sx={{
-          mt: 3,
-          px: 3,
-          textTransform: "none",
-          fontSize: "22px",
-          color: "#fff",
-        }}
-      >
-        Order Now
-      </Button> */}
     </Box>
   );
 }

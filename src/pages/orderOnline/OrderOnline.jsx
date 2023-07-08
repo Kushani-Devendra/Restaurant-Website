@@ -3,21 +3,14 @@ import PropTypes from "prop-types";
 import {
   Box,
   Button,
-  Card,
-  CardActionArea,
-  CardContent,
-  CardMedia,
   Grid,
-  IconButton,
   Tab,
   Tabs,
   TextField,
-  Typography,
   useTheme,
 } from "@mui/material";
 import {
   BakeryDining,
-  Favorite,
   Icecream,
   LocalDrink,
   LunchDining,
@@ -32,18 +25,18 @@ import {
   useNavigation,
   useSubmit,
 } from "react-router-dom";
-import burger1 from "./burger_1.jpg";
-import burger2 from "../assets/images/burger_2.jpg";
-import burger3 from "../assets/images/burger_3.jpg";
-import burger4 from "../assets/images/burger_4.jpg";
-import burger5 from "../assets/images/burger_5.jpg";
-import burger6 from "../assets/images/burger_6.jpg";
-import burger7 from "../assets/images/burger_7.jpg";
-import burger8 from "../assets/images/burger_8.jpg";
-import burger9 from "../assets/images/burger_9.jpg";
-import burger10 from "../assets/images/burger_10.jpg";
-import ProductCard from "../common/ProductCard";
-import { burgerList } from "../data/burgerData";
+// import burger1 from "../burger_1.jpg";
+// import burger2 from "../../assets/images/burger_2.jpg";
+// import burger3 from "../../assets/images/burger_3.jpg";
+// import burger4 from "../../assets/images/burger_4.jpg";
+// import burger5 from "../../assets/images/burger_5.jpg";
+// import burger6 from "../../assets/images/burger_6.jpg";
+// import burger7 from "../../assets/images/burger_7.jpg";
+// import burger8 from "..../assets/images/burger_8.jpg";
+// import burger9 from "../../assets/images/burger_9.jpg";
+// import burger10 from "../../assets/images/burger_10.jpg";
+import ProductCard from "./ProductCard";
+import { burgerList } from "../../data/burgerData";
 
 function LinkTab(props) {
   return (

@@ -3,7 +3,7 @@ import { TextField } from "@mui/material";
 import { NumberFormatBase } from "react-number-format";
 
 // quantity
-function NumericFormatCustom(props) {
+function QuantityFormat(props) {
   const { inputRef, onChange, ...other } = props;
 
   return (
@@ -30,10 +30,10 @@ export default function SelectQuantity({ quantity }) {
       //   label="react-number-format"
       value={quantity}
       //   onChange={handleChange}
-      name="numberformat"
-      id="formatted-numberformat-input"
+      name="quantityFormat"
+      id="quantity"
       InputProps={{
-        inputComponent: NumericFormatCustom,
+        inputComponent: QuantityFormat,
       }}
       size="small"
       sx={{

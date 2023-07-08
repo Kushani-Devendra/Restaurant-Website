@@ -79,7 +79,7 @@ export default function BankCard() {
       container
       spacing={2}
       sx={{
-        mt: 5,
+        mt: { xs: 1.5, md: 4.5 },
         // display: "flex",
         alignItems: "start",
         textAlign: "start",
@@ -91,26 +91,34 @@ export default function BankCard() {
           {/* promotion */}
           <Box
             sx={{
-              p: 3,
+              p: { xs: 1.5, md: 3 },
               textAlign: "left",
               backgroundColor: theme.palette.grey[100],
               borderRadius: 3,
             }}
           >
-            <Typography variant="h6">Hot Food Promotion</Typography>
+            <Typography
+              variant="h6"
+              sx={{ fontSize: { xs: "16px", md: "20px" } }}
+            >
+              Hot Food Promotion
+            </Typography>
             <Box
               sx={{
-                mt: 2,
                 display: "flex",
                 justifyContent: "space-between",
-                alignItems: "center",
               }}
             >
               <Typography
                 variant="subtitle1"
-                sx={{ display: "flex", alignItems: "center", gap: 1 }}
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 1,
+                  fontSize: { xs: "14px", md: "16px" },
+                }}
               >
-                <LocalOffer /> Use points
+                <LocalOffer fontSize="small" /> Use points
               </Typography>
               <FormGroup>
                 <FormControlLabel
@@ -118,6 +126,11 @@ export default function BankCard() {
                   control={<Switch />}
                   label="Loyalty Program Required"
                   labelPlacement="start"
+                  sx={{
+                    "& .MuiTypography-root": {
+                      fontSize: { xs: "13px", md: "16px" },
+                    },
+                  }}
                 />
               </FormGroup>
             </Box>
@@ -126,22 +139,37 @@ export default function BankCard() {
           {/* order summary */}
           <Box
             sx={{
-              p: 3,
+              p: { xs: 1.5, md: 3 },
               textAlign: "left",
               backgroundColor: theme.palette.grey[100],
               borderRadius: 3,
             }}
           >
-            <Typography variant="h6">Order Summary</Typography>
+            <Typography
+              variant="h6"
+              sx={{ fontSize: { xs: "16px", md: "20px" } }}
+            >
+              Order Summary
+            </Typography>
             <Box
               sx={{
-                mt: 2,
+                mt: { xs: 1, md: 2 },
                 display: "flex",
                 justifyContent: "space-between",
               }}
             >
-              <Typography variant="subtitle1">Food Total</Typography>
-              <Typography variant="subtitle1">$00.00</Typography>
+              <Typography
+                variant="subtitle1"
+                sx={{ fontSize: { xs: "14px", md: "16px" } }}
+              >
+                Food Total
+              </Typography>
+              <Typography
+                variant="subtitle1"
+                sx={{ fontSize: { xs: "14px", md: "16px" } }}
+              >
+                $00.00
+              </Typography>
             </Box>
             <Box
               sx={{
@@ -149,8 +177,18 @@ export default function BankCard() {
                 justifyContent: "space-between",
               }}
             >
-              <Typography variant="subtitle1">Add-ons Total</Typography>
-              <Typography variant="subtitle1">$00.00</Typography>
+              <Typography
+                variant="subtitle1"
+                sx={{ fontSize: { xs: "14px", md: "16px" } }}
+              >
+                Add-ons Total
+              </Typography>
+              <Typography
+                variant="subtitle1"
+                sx={{ fontSize: { xs: "14px", md: "16px" } }}
+              >
+                $00.00
+              </Typography>
             </Box>
             <Box
               sx={{
@@ -158,8 +196,18 @@ export default function BankCard() {
                 justifyContent: "space-between",
               }}
             >
-              <Typography variant="subtitle1">Delivery Fee</Typography>
-              <Typography variant="subtitle1">$00.00</Typography>
+              <Typography
+                variant="subtitle1"
+                sx={{ fontSize: { xs: "14px", md: "16px" } }}
+              >
+                Delivery Fee
+              </Typography>
+              <Typography
+                variant="subtitle1"
+                sx={{ fontSize: { xs: "14px", md: "16px" } }}
+              >
+                $00.00
+              </Typography>
             </Box>
             <Box
               sx={{
@@ -167,15 +215,25 @@ export default function BankCard() {
                 justifyContent: "space-between",
               }}
             >
-              <Typography variant="subtitle1">Total Payment</Typography>
-              <Typography variant="subtitle1">$00.00</Typography>
+              <Typography
+                variant="subtitle1"
+                sx={{ fontSize: { xs: "14px", md: "16px" } }}
+              >
+                Total Payment
+              </Typography>
+              <Typography
+                variant="subtitle1"
+                sx={{ fontSize: { xs: "14px", md: "16px" } }}
+              >
+                $00.00
+              </Typography>
             </Box>
           </Box>
 
           {/* total payment */}
           <Box
             sx={{
-              p: 3,
+              p: { xs: 1.5, md: 3 },
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
@@ -184,10 +242,16 @@ export default function BankCard() {
               color: theme.palette.primary.main,
             }}
           >
-            <Typography variant="h5" sx={{ fontWeight: 500 }}>
+            <Typography
+              variant="h5"
+              sx={{ fontSize: { xs: "20px", md: "24px" }, fontWeight: 500 }}
+            >
               Total Payment
             </Typography>
-            <Typography variant="h5" sx={{ fontWeight: 500 }}>
+            <Typography
+              variant="h5"
+              sx={{ fontSize: { xs: "20px", md: "24px" }, fontWeight: 500 }}
+            >
               $ 00.00
             </Typography>
           </Box>
@@ -198,7 +262,7 @@ export default function BankCard() {
       <Grid item xs={12} md={6}>
         <Box
           sx={{
-            p: 3,
+            p: { xs: 2.5, md: 3 },
             // textAlign: "left",
             backgroundColor: theme.palette.grey[100],
             borderRadius: 3,
@@ -206,9 +270,15 @@ export default function BankCard() {
         >
           <Typography
             variant="h6"
-            sx={{ mt: 2, display: "flex", alignItems: "center", gap: 1 }}
+            sx={{
+              mt: { xs: -1, md: 2 },
+              display: "flex",
+              alignItems: "center",
+              gap: 1,
+              fontSize: { xs: "16px", md: "20px" },
+            }}
           >
-            <CreditCard /> Payment
+            <CreditCard fontSize="small" /> Payment
           </Typography>
           <Divider sx={{ mt: 1 }} />
 
@@ -220,7 +290,12 @@ export default function BankCard() {
           >
             <Grid container spacing={1}>
               <Grid item xs={12}>
-                <Typography variant="subtitle1">Card Number</Typography>
+                <Typography
+                  variant="subtitle1"
+                  sx={{ fontSize: { xs: "14px", md: "16px" } }}
+                >
+                  Card Number
+                </Typography>
                 <TextField
                   name="cardFormat"
                   id="cardInput"
@@ -232,13 +307,18 @@ export default function BankCard() {
                   fullWidth
                   sx={{
                     mt: 1,
-                    mb: { xs: 0, md: 1 },
-                    fontSize: "14px",
+                    mb: { xs: 1, md: 1 },
+                    fontSize: { xs: "13px", md: "14px" },
                   }}
                 />
               </Grid>
-              <Grid item xs={6} sx>
-                <Typography variant="subtitle1">Card Number</Typography>
+              <Grid item xs={6}>
+                <Typography
+                  variant="subtitle1"
+                  sx={{ fontSize: { xs: "14px", md: "16px" } }}
+                >
+                  Exp Date
+                </Typography>
                 {/* date picker */}
                 <LocalizationProvider
                   dateAdapter={AdapterDayjs}
@@ -255,17 +335,18 @@ export default function BankCard() {
                       },
                     }}
                   >
-                    <DateField
-                      defaultValue={dayjs("04/17")}
-                      format="MM/YY"
-                      // fullWidth
-                    />
+                    <DateField defaultValue={dayjs("04/17")} format="MM/YY" />
                   </DemoContainer>
                 </LocalizationProvider>
               </Grid>
 
               <Grid item xs={6}>
-                <Typography variant="subtitle1">CCV</Typography>
+                <Typography
+                  variant="subtitle1"
+                  sx={{ fontSize: { xs: "14px", md: "16px" } }}
+                >
+                  CCV
+                </Typography>
                 <TextField
                   name="ccvFormat"
                   id="ccvInput"
@@ -277,7 +358,7 @@ export default function BankCard() {
                   fullWidth
                   sx={{
                     mt: 1,
-                    fontSize: "14px",
+                    fontSize: { xs: "13px", md: "14px" },
                   }}
                 />
               </Grid>
@@ -285,10 +366,16 @@ export default function BankCard() {
                 <FormGroup>
                   <FormControlLabel
                     control={
-                      <Checkbox sx={{ color: theme.palette.grey[500] }} />
+                      <Checkbox
+                        sx={{
+                          color: theme.palette.grey[500],
+                        }}
+                      />
                     }
                     label="Save card details"
-                    sx={{ color: theme.palette.grey[500] }}
+                    sx={{
+                      color: theme.palette.grey[500],
+                    }}
                   />
                 </FormGroup>
               </Grid>
@@ -297,7 +384,7 @@ export default function BankCard() {
                   type="submit"
                   variant="contained"
                   sx={{
-                    mt: 2,
+                    mt: { xs: 1, md: 2 },
                     width: "100%",
                     textTransform: "none",
                     color: "#fff",

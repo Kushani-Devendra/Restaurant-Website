@@ -7,13 +7,15 @@ export default function CashCard() {
   return (
     <Box
       sx={{
-        mt: 5,
+        mt: { xs: 3, md: 5 },
         p: 3,
         backgroundColor: theme.palette.grey[100],
         borderRadius: 3,
       }}
     >
-      <Typography variant="h6">Pay cash on delivery.</Typography>
+      <Typography variant="h6" sx={{ fontSize: { xs: "16px", md: "20px" } }}>
+        Pay cash on delivery
+      </Typography>
     </Box>
   );
 }

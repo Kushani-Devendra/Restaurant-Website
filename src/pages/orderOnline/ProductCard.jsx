@@ -10,16 +10,10 @@ import {
   useTheme,
 } from "@mui/material";
 import React from "react";
-import burger1 from "../assets/images/burger_1.jpg";
+import burger1 from "../../assets/images/burger_1.jpg";
 import ProductCardDialog from "./ProductCardDialog";
 
-export default function ProductCard({
-  image,
-  name,
-  price,
-  popular,
-  favourite,
-}) {
+export default function ProductCard({ image, name, price, popular }) {
   const theme = useTheme();
   //   favourite button
   const [isFavourite, setIsFavourite] = React.useState(true);

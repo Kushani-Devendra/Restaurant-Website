@@ -6,7 +6,6 @@ import {
   Select,
   useTheme,
 } from "@mui/material";
-import { burgerList } from "../data/burgerData";
 import { addonList } from "../data/addonList";
 
 // multiple select

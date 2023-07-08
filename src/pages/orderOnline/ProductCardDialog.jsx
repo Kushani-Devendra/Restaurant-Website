@@ -1,30 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {
-  Box,
   Button,
   CardMedia,
   Dialog,
   DialogActions,
   DialogContent,
   DialogTitle,
-  FormControl,
   Grid,
   IconButton,
   List,
   ListItem,
-  MenuItem,
-  OutlinedInput,
-  Select,
-  TextField,
   Typography,
   styled,
   useTheme,
 } from "@mui/material";
 import { Close, ShoppingCart } from "@mui/icons-material";
-import burger2 from "../assets/images/burger_2.jpg";
-import SelectAddons from "./SelectAddons";
-import SelectQuantity from "./SelectQuantity";
+import burger2 from "../../assets/images/burger_2.jpg";
+import SelectAddons from "../../common/SelectAddons";
+import SelectQuantity from "../../common/SelectQuantity";
 
 // dialog box
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({

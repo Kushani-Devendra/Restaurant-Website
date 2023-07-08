@@ -3,42 +3,28 @@ import {
   AppBar,
   Badge,
   Box,
-  Button,
   Container,
   IconButton,
   Menu,
   MenuItem,
   Toolbar,
   Tooltip,
-  Typography,
   useTheme,
 } from "@mui/material";
 import { ShoppingCart, Menu as MenuIcon } from "@mui/icons-material";
 import { Link, NavLink } from "react-router-dom";
-import OrderOnline from "../pages/OrderOnline";
-
-// const pages = ["View Menu", "Order At Table", "Order Online"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 export default function NavBar() {
   const theme = useTheme();
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
   };
 
   return (
@@ -106,7 +92,6 @@ export default function NavBar() {
                   onClick={handleCloseNavMenu}
                   style={({ isActive, isPending }) => {
                     return {
-                      // margin: "0px 1.5em",
                       textDecoration: "none",
                       fontWeight: isActive ? 600 : 400,
                       color: isActive ? theme.palette.primary.main : "inherit",
