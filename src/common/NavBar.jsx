@@ -206,7 +206,7 @@ export default function NavBar() {
             <Tooltip title="Shopping Cart">
               <Link to={"/shopping-cart"}>
                 <IconButton sx={{ color: "#fff" }}>
-                  <Badge badgeContent={4} color="primary">
+                  <Badge badgeContent={3} color="primary">
                     <ShoppingCart />
                   </Badge>
                 </IconButton>

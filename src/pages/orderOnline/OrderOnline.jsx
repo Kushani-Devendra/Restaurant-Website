@@ -129,6 +129,7 @@ export default function OrderOnline() {
           width: "100%",
           display: "flex",
           justifyContent: "center",
+          alignItems: "center",
           backgroundColor: theme.palette.secondary.dark,
         }}
       >
