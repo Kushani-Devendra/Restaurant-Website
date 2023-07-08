@@ -57,32 +57,30 @@ export default function NavBar() {
               {/* noclick go to page + close menu */}
               {/* view menu */}
               <MenuItem>
-                <NavLink to={"/view-menu"} onClick={handleCloseNavMenu}>
-                  <Link
-                    to={"/view-menu"}
-                    style={{
-                      textDecoration: "none",
-                      color: theme.palette.secondary.main,
-                    }}
-                  >
-                    View Menu
-                  </Link>
-                </NavLink>
+                <Link
+                  to={"/view-menu"}
+                  onClick={handleCloseNavMenu}
+                  style={{
+                    textDecoration: "none",
+                    color: theme.palette.secondary.main,
+                  }}
+                >
+                  View Menu
+                </Link>
               </MenuItem>
 
               {/* order at table */}
               <MenuItem>
-                <NavLink to={"/order-at-table"} onClick={handleCloseNavMenu}>
-                  <Link
-                    to={"/order-at-table"}
-                    style={{
-                      textDecoration: "none",
-                      color: theme.palette.secondary.main,
-                    }}
-                  >
-                    Order At Table
-                  </Link>
-                </NavLink>
+                <Link
+                  to={"/order-at-table"}
+                  onClick={handleCloseNavMenu}
+                  style={{
+                    textDecoration: "none",
+                    color: theme.palette.secondary.main,
+                  }}
+                >
+                  Order At Table
+                </Link>
               </MenuItem>
 
               {/* order online */}
@@ -98,15 +96,7 @@ export default function NavBar() {
                     };
                   }}
                 >
-                  <Link
-                    to={"/order-online"}
-                    style={{
-                      textDecoration: "none",
-                      // color: "#fff",
-                    }}
-                  >
-                    Order Online
-                  </Link>
+                  Order Online
                 </NavLink>
               </MenuItem>
               {/* {pages.map((page) => (
@@ -124,7 +114,6 @@ export default function NavBar() {
               justifyContent: "center",
               display: { xs: "none", md: "flex" },
             }}
-            style={{}}
           >
             <Box
               sx={{
@@ -133,8 +122,9 @@ export default function NavBar() {
               }}
             >
               <NavLink
+                className="white-link"
                 to={"/view-menu"}
-                onClick={handleCloseNavMenu}
+                // onClick={handleCloseNavMenu}
                 style={({ isActive, isPending }) => {
                   return {
                     margin: "0px 1.5em",
@@ -143,19 +133,12 @@ export default function NavBar() {
                   };
                 }}
               >
-                <Link
-                  to={"/view-menu"}
-                  style={{
-                    textDecoration: "none",
-                    color: "#fff",
-                  }}
-                >
-                  View Menu
-                </Link>
+                View Menu
               </NavLink>
               <NavLink
+                className="white-link"
                 to={"/order-at-table"}
-                onClick={handleCloseNavMenu}
+                // onClick={handleCloseNavMenu}
                 style={({ isActive, isPending }) => {
                   return {
                     margin: "0px 1.5em",
@@ -164,22 +147,15 @@ export default function NavBar() {
                   };
                 }}
               >
-                <Link
-                  to={"/order-at-table"}
-                  style={{
-                    textDecoration: "none",
-                    color: "#fff",
-                  }}
-                >
-                  Order At Table
-                </Link>
+                Order At Table
               </NavLink>
               <NavLink
+                className="white-link"
                 to={"/order-online"}
                 // className={({ isActive, isPending }) =>
                 //   isActive ? "active" : isPending ? "pending" : ""
                 // }
-                onClick={handleCloseNavMenu}
+                // onClick={handleCloseNavMenu}
                 style={({ isActive, isPending }) => {
                   return {
                     margin: "0px 1.5em",
@@ -188,15 +164,7 @@ export default function NavBar() {
                   };
                 }}
               >
-                <Link
-                  to={"/order-online"}
-                  style={{
-                    textDecoration: "none",
-                    color: "#fff",
-                  }}
-                >
-                  Order Online
-                </Link>
+                Order Online
               </NavLink>
             </Box>
           </Box>

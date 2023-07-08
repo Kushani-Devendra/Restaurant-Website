@@ -1,13 +1,13 @@
 import React from "react";
 import { TextField } from "@mui/material";
-import { NumberFormatBase } from "react-number-format";
+import { NumericFormat } from "react-number-format";
 
 // quantity
 function QuantityFormat(props) {
   const { inputRef, onChange, ...other } = props;
 
   return (
-    <NumberFormatBase
+    <NumericFormat
       {...other}
       getInputRef={inputRef}
       allowNegative={false}
@@ -19,7 +19,7 @@ function QuantityFormat(props) {
           },
         });
       }}
-      isNumericString
+      valueIsNumericString
     />
   );
 }
@@ -45,3 +45,5 @@ export default function SelectQuantity({ quantity }) {
     />
   );
 }
+
+// [Help needed] - Invalid prop `inputComponent` supplied to `ForwardRef(InputBase)`.

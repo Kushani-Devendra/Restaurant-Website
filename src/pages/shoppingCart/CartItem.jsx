@@ -16,7 +16,7 @@ import {
 import burger1 from "../../assets/images/burger_1.jpg";
 
 import { Close } from "@mui/icons-material";
-import { NumberFormatBase } from "react-number-format";
+import { NumericFormat } from "react-number-format";
 import { addonList } from "../../data/addonList";
 import { useTheme } from "@emotion/react";
 
@@ -44,11 +44,11 @@ function getStyles(addons, addonName, theme) {
 }
 
 // quantity
-function NumericFormatCustom(props) {
+function FormatQuantity(props) {
   const { inputRef, onChange, ...other } = props;
 
   return (
-    <NumberFormatBase
+    <NumericFormat
       {...other}
       getInputRef={inputRef}
       allowNegative={false}
@@ -60,7 +60,7 @@ function NumericFormatCustom(props) {
           },
         });
       }}
-      isNumericString
+      valueIsNumericString
     />
   );
 }
@@ -188,10 +188,10 @@ export default function CartItem({ image, name, price, addons, quantity }) {
               //   label="react-number-format"
               value={quantity}
               //   onChange={handleChange}
-              name="numberformat"
-              id="formatted-numberformat-input"
+              name="formatQuantity"
+              id="quantity"
               InputProps={{
-                inputComponent: NumericFormatCustom,
+                inputComponent: FormatQuantity,
               }}
               size="small"
               sx={{

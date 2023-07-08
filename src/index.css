@@ -20,6 +20,11 @@
   width: "100%";
 }
 
+.white-link {
+  text-decoration: none;
+  color: white;
+}
+
 .error-page {
   display: flex;
   flex-direction: column;
